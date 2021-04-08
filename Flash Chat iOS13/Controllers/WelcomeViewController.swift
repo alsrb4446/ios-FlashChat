@@ -13,6 +13,18 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: CLTypingLabel!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        // 네비게이션 바 숨기기, override때 super 항상 불러오기
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+        // 모든 화면에서 네비게이션 바 없어져서 다시 네비게이션 바 가져오기
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
